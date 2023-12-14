@@ -1,0 +1,15 @@
+<!--addToCartResult.ejs-->
+<%- include('partials/header.ejs') %>
+  <h1>Product Added to Cart</h1>
+
+  <% if (success) { %>
+    <p><%= quantity %> <%= productname %> added to your cart successfully!</p>
+    <p>Subtotal: <%= subtotal %></p>
+    <a href="/search">Continue Shopping</a>
+    <a href="/cart">View Cart</a>
+  <% } else { %>
+    <p>Failed to add the product to your cart.</p>
+    <a href="/search">Back to Search</a>
+  <% } %>
+    <script src="/js/script.js"></script>
+<%- include('partials/footer') %>

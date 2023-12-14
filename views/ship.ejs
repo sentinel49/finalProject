@@ -1,0 +1,37 @@
+<!-- ship.ejs -->
+<%- include('partials/header.ejs') %>
+  <br />
+  <h4>Items in Your Cart:</h4>
+
+  Street Address:
+  <br>
+  <input type="text" name="address">
+  <br />
+
+  Enter your zip and we'll help fill more:
+  <br>
+
+  <form action="/getShipInfo" method="get">
+    <input id="zip" name="zip" type="text">
+    <button type="submit">Help Me Fill Info!</button>
+  </form>
+  <br />
+
+  City:
+  <br>
+  <span id="city" name="city"><%= city %></span>
+  <br />
+
+  State:
+  <br>
+  <span id="state" name="state"><%= state %></span>
+
+  <br />
+
+  <form action="/confirmPurchase" method="post">
+    <button type="submit">Confirm Purchase</button>
+  </form>
+
+  
+  <script src="/js/script.js"></script>
+<%- include('partials/footer') %>

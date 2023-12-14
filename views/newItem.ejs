@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs') %>
+    
+    <h1>Add a New Item</h1>
+    
+    <form method="POST" action="/addNewItem">
+      
+      Item Name: 
+      <input type="text" name="nproductname"><br>
+      
+      Sale Price:
+            <input type="text" name="nproductprice"><br>
+      
+      Seller:
+      <select name="nsellerid">
+        <option value="">Select One</option>
+        <option value="ES">Earthling Syndicate by Erin</option>
+        <option value="LC">Lunar Cult by Lenin</option>
+        <option value="RW">Retrograde Wayfairer by Ryan</option>
+        <option value="VH">Vector Haus by Valentina</option>
+      </select><br>
+
+      Category:
+      <select name="ncategoryid">
+        <option value="">Select One</option>
+        <option value="TO">Tops</option>
+        <option value="BO">Bottoms</option>
+        <option value="SH">Shoes</option>
+        <option value="AC">Accessories</option>
+      </select><br>
+
+      <br>
+      <button>Add Item</button>
+    </form>
+
+    <% if (typeof message != "undefined"){ %>
+      <h3><%=message%></h3>
+      <% } %>
+
+ <%- include('partials/footer') %>

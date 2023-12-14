@@ -1,0 +1,18 @@
+<!-- checkout.ejs -->
+<%- include('partials/header.ejs') %>
+  <br />
+  <h2>Items in Your Cart:</h2>
+
+  <% for (item of items) { %>
+    <div>
+      <p>Product: <%= item.productname %></p>
+      <p>Quantity: <%= item.quantity %> | Subtotal: <%= item.subtotal %></p>
+    </div>
+  <% } %>
+
+  <form action="/confirm">
+    <button>Confirm Checkout</button>
+  </form>
+
+    <script src="/js/script.js"></script>
+<%- include('partials/footer') %>

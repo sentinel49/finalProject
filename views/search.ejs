@@ -1,0 +1,28 @@
+<!-- search.ejs -->
+<%- include('partials/header.ejs') %>
+<h1>Search Results</h1>
+
+<% if (results.length > 0) { %>
+  <ul>
+    <% results.forEach(product => { %>
+      <li>
+        <% if (product.imgUrl) { %>
+          <img src="<%= product.imgUrl %>" alt="<%= product.productname %> Image" style="width: 100px; height: 100px;">
+        <% } %>
+        <span> <br>
+          <%= product.productname %> - <%= product.productprice %> 
+          <form action="/addToCart" method="post">
+            <input type="hidden" name="productid" value="<%= product.productid %>">
+            <input type="number" name="quantity" value="1" min="1" max="10">
+            <button type="submit">Add to Cart</button>
+            
+          </form>
+        </span>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No products found.</p>
+<% } %>
+<script src="/js/script.js"></script>
+<%- include('partials/footer') %>

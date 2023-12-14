@@ -1,0 +1,26 @@
+<!-- index.ejs -->
+<%- include('partials/header.ejs') %>
+  <br />
+  <br />
+  <form action="/cart">
+    <button class="centered-button">View Cart</button>
+  </form>
+  <form action="/search">
+    <input type="text" name="search">
+    <button name="productSearch"> Search Products</button>
+  </form>
+  <br />
+  <br />
+
+
+  <form action="/checkout">
+    <button> Checkout Now!</button>
+  </form>
+
+  <form action="/addNewItem">
+  <button>Add New Item</button>
+  </form>
+  <br>
+  
+  <script src="/js/script.js"></script>
+<%- include('partials/footer') %>

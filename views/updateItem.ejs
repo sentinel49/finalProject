@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Update Item</title>
+</head>
+<body>
+<h1>Update Item</h1>
+<form method="POST" action="updateItem">
+<input type="hidden" name="uproductid" value="<%=productinfo[0].productid%>">
+Item Name:
+<input type="text" name="uname" value="<%=productinfo[0].productname%>">
+<br>
+Price:
+<input type="text" name="uproductprice" value="<%=productinfo[0].productprice%>">
+<br>
+
+Seller:
+  <select name="usellerid">
+    <option value="">Select One</option>
+    <option value="ES">Earthling Syndicate by Erin</option>
+    <option value="LC">Lunar Cult by Lenin</option>
+    <option value="RW">Retrograde Wayfairer by Ryan</option>
+    <option value="VH">Vector Haus by Valentina</option>
+  </select><br>
+  <br>
+  <button>Update Item</button>
+  </form>
+  <br>
+  </body>
+  </html>

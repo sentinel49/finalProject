@@ -1,0 +1,37 @@
+<!-- cart.ejs -->
+<%- include('partials/header.ejs') %>
+<h1>User's Shopping Cart</h1>
+
+<% if (items.length > 0) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0; %>
+      <% items.forEach(item => { %>
+        <tr>
+          <td><%= item.productname %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.subtotal %></td>
+        </tr>
+        <% total += parseFloat(item.subtotal); %>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <p>Total: <%= total.toFixed(2) %></p>
+
+  <form action="/confirm">
+    <button>Confirm Checkout</button>
+  </form>
+<% } else { %>
+  <p>Your cart is empty.</p>
+<% } %>
+
+<script src="/js/script.js"></script>
+<%- include('partials/footer') %>
